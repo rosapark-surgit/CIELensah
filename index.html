@@ -2,9 +2,84 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width, initial-scale=1.0">
-    <title>TP4
-    </title>
-    <img src="beluga.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image en valeur</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page */
+        body {
+            min-height: 100vh;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Conteneur image */
+        .image-wrapper {
+            width: 95vw;
+            max-width: 1200px;
+            animation: apparition 1.2s ease-out;
+        }
+
+        /* Image */
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow:
+                0 0 30px rgba(255, 255, 255, 0.08),
+                0 25px 60px rgba(0, 0, 0, 0.9);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        /* Effet hover */
+        .image-wrapper img:hover {
+            transform: scale(1.04);
+            box-shadow:
+                0 0 45px rgba(255, 255, 255, 0.15),
+                0 35px 80px rgba(0, 0, 0, 1);
+        }
+
+        /* Animation d’entrée */
+        @keyframes apparition {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .image-wrapper {
+                width: 100vw;
+            }
+
+            .image-wrapper img {
+                border-radius: 0;
+            }
+        }
+    </style>
 </head>
+
+<body>
+
+    <div class="image-wrapper">
+        <img src="preuv.jpeg" alt="Image mise en valeur">
+    </div>
+
+</body>
 </html>
